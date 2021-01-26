@@ -42,9 +42,9 @@ create_cert() {
 
 clear_certs_db() {
 	echo "Clearing generated certificate db..."
-	rm -rfv /var/lib/ssl_db/
-	/usr/lib/squid/ssl_crtd -c -s /var/lib/ssl_db
-	"$CHOWN" -R squid.squid /var/lib/ssl_db
+	rm -rfv /var/cache/squid/ssl_db
+	/usr/lib/squid/security_file_certgen -c -s /var/cache/squid/ssl_db -M 10
+	"$CHOWN" -R squid.squid /var/cache/squid/ssl_db
 }
 
 run() {

@@ -1,7 +1,7 @@
 version: "3"
 services:
   squid-alpine-ssl:
-    image: alatas/squid-alpine-ssl:latest
+    image: speriyasamy/squid-alpine-ssl:latest
     environment:
       - CN=squid.local
       - O=squid
@@ -13,6 +13,7 @@ services:
     volumes:
       - ./log:/var/log/
       - ./conf/squid.conf:/etc/squid/squid.conf
+      - ./conf/users_passwd:/etc/squid/users_passwd
       - ./cache:/var/cache
       - ./cert:/etc/squid-cert
     restart: always
