@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:3.10
 
 LABEL maintainer="alatas@gmail.com"
 
@@ -14,8 +14,7 @@ ARG all_proxy
 ENV http_proxy=$all_proxy \
     https_proxy=$all_proxy
 
-RUN apk update && \
-    apk add --no-cache \
+RUN apk add --no-cache \
     squid \
     openssl \
     ca-certificates && \
