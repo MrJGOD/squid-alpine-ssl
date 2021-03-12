@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM alpine
 
 LABEL maintainer="alatas@gmail.com"
 
